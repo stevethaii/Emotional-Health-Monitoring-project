@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingLeft="16dp"
+android:paddingRight="16dp"
+android:paddingTop="16dp"
+android:paddingBottom="16dp"
+tools:context=".Chat">
+
+<TextView
+    android:id="@+id/text"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Select a device."
+    android:paddingLeft="10dip"
+    android:textSize="30sp"/>
+
+<TextView
+    android:id="@+id/info"
+    android:textSize="15sp"
+    android:paddingLeft="10dip"
+    android:paddingBottom="5dip"
+    android:textColor="@color/colorPrimary"
+    android:text="You must be paired with your device to see it in the list. Pull to refresh the list."
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/text"/>
+
+<com.example.dinhthai.sendingandreceivingdata.pulltorefresh.PullToRefresh
+    android:id="@+id/pull_to_refresh"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/info">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</com.example.dinhthai.sendingandreceivingdata.pulltorefresh.PullToRefresh>
+
+<Button
+    android:id="@+id/not_in_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Device not found!"
+    android:layout_below="@+id/pull_to_refresh"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true" />
+
+</RelativeLayout>
